@@ -8,12 +8,8 @@ const { startBtn, stopBtn, bodyСolor } = refs;
 let intervalId = null;
 let isActive = false;
 
-
 refs.startBtn.addEventListener('click', сolorChage);
 refs.stopBtn.addEventListener('click', stopColorChage);
-
-
-
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -23,19 +19,19 @@ function getRandomHexColor() {
 
 function сolorChage() {
   if (!isActive) {
-intervalId = setInterval(() => {
-    let currenntColor = getRandomHexColor();
+    intervalId = setInterval(() => {
+      let currenntColor = getRandomHexColor();
 
-    bodyСolor.style.backgroundColor = currenntColor
-}, 1000);
+      bodyСolor.style.backgroundColor = currenntColor;
+    }, 1000);
 
-startBtn.setAttribute('disabled', 'true');
-stopBtn.removeAttribute('disabled');
+    startBtn.setAttribute('disabled', 'true');
+    stopBtn.removeAttribute('disabled');
 
-isActive = true;
-
+    isActive = true;
   }
 }
+
 
 function stopColorChage() {
   if (isActive) {
