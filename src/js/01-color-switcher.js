@@ -43,3 +43,4 @@ function stopColorChage() {
   stopBtn.setAttribute('disabled', 'true');
   startBtn.removeAttribute('disabled');
 }
+console.log(10);
