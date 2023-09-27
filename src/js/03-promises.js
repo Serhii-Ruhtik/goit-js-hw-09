@@ -7,19 +7,40 @@
 //   }
 // }
 
-// // !---------------------------------------
-// const promise = new Promise((resolve, relect) => {
-//   const canFulfill = Math.randome() > 0.5;
+// !---------------------------------------
+const promise = new Promise((resolve, relect) => {
+  const canFulfill = Math.random() > 0.5;
 
-//   if (canFulfill) {
-//     resolve('YES');
-//   }
-//   relect('NO');
-// });
-// promise.then();
+  setTimeout(() => {
+    if (canFulfill) {
+      resolve('YES');
+    }
+    relect('NO');
+  }, 2000);
+});
 // console.log(promise);
-console.log(10);
+// promise.then(
+//   result => {
+//     console.log(result);
+//   },
+//   error => {
+//     console.log(error);
+//   }
+// );
 
-console.log(10);
-console.log(10);
-console.log(10);
+/**
+ * ланцюжки промісів
+ */
+promise
+  .then(result => {
+    console.log(result);
+
+    return 5
+  })
+  .then(x => {
+    console.log(x);
+  })
+  .then(y => {
+    console.log(y);
+  });
+
