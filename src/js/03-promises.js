@@ -51,34 +51,41 @@
  * - Функция которая возвращает промис
  */
 
-const makeOrder = (dish) => {
-  const DELAY = 1000;
+// const makeOrder = (dish) => {
+//   const DELAY = 1000;
 
-  const promise = new Promise((resolve, reject) =>
-  {
-    const passed = Math.random() > 0.5;
-  setTimeout(() => {
-    if (passed) {
-      resolve('Your food');
-    } else {
-      reject('your food is not ready');
-    }
-  }, DELAY);
-  })
-  return promise
-};
+//   const promise = new Promise((resolve, reject) =>
+//   {
+//     const passed = Math.random() > 0.5;
+//   setTimeout(() => {
+//     if (passed) {
+//       resolve('Your food');
+//     } else {
+//       reject('your food is not ready');
+//     }
+//   }, DELAY);
+//   })
+//   return promise
+// };
 
-makeOrder('пиріжок').then(onMakeOrderSuccess).catch(onMakeOrderError) ;
+// makeOrder('пиріжок').then(onMakeOrderSuccess).catch(onMakeOrderError) ;
 
-function onMakeOrderSuccess(result) {
-  console.log('onMakeOrderSuccess');
-  console.log(result);
-}
-function onMakeOrderError(error) {
-  console.log('onMakeOrderError');
-  console.log(error);
-}
+// function onMakeOrderSuccess(result) {
+//   console.log('onMakeOrderSuccess');
+//   console.log(result);
+// }
+// function onMakeOrderError(error) {
+//   console.log('onMakeOrderError');
+//   console.log(error);
+// }
+// console.log(10);
+// console.log(20);
+// console.log(30);
+// console.log(40);
+// console.log(50);
+
+const promise = new Promise((resolve, reject) => {
+  reject("Whoops")
+})
+promise.then(value => console.log(value));
 console.log(10);
-console.log(20);
-console.log(30);
-console.log(40);
