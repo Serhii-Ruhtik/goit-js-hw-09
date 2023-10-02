@@ -8,39 +8,77 @@
 // }
 
 // !---------------------------------------
-const promise = new Promise((resolve, relect) => {
-  const canFulfill = Math.random() > 0.5;
+// const promise = new Promise((resolve, reject) => {
+//   const canFulfill = Math.random() > 0.5;
 
-  setTimeout(() => {
-    if (canFulfill) {
-      resolve('YES');
-    }
-    relect('NO');
-  }, 2000);
-});
-// console.log(promise);
-// promise.then(
-//   result => {
-//     console.log(result);
-//   },
-//   error => {
-//     console.log(error);
-//   }
-// );
+//   setTimeout(() => {
+//     if (canFulfill) {
+//       resolve('YES');
+//     }
+//     reject('NO');
+//   }, 2000);
+// });
 
-/**
- * ланцюжки промісів
+// function onFulfilled(result) {
+//   console.log('onFulfilled -> onFulfilled');
+//   console.log(`✅ ${result}`);
+// }
+
+// function onRejected(error) {
+//   console.log('onRejected -> onRejected');
+//   console.log(`❌ ${error}`);
+// }
+
+// /**
+//  * ланцюжки промісів
+//  */
+
+// promise
+//   .then(onFulfilled, onRejected)
+//   .then(x => {
+//     console.log(x);
+
+//     return 10;
+//   })
+//   .then(y => console.log(y))
+//   .then(a => console.log(a))
+//   .catch(error => console.log(error))
+//   .finally(() => console.log('Я буду виконуватися завжди'));
+
+/*
+ * Промисификация:
+ * - Поблема доступа к результату промиса с колбеком
+ * - Функция которая возвращает промис
  */
-promise
-  .then(result => {
-    console.log(result);
 
-    return 5
-  })
-  .then(x => {
-    console.log(x);
-  })
-  .then(y => {
-    console.log(y);
-  });
+const makeOrder = (dish) => {
+  const DELAY = 1000;
 
+  const promise = new Promise((resolve, reject) =>
+  {
+    const passed = Math.random() > 0.5;
+  setTimeout(() => {
+    if (passed) {
+      resolve('Your food');
+    } else {
+      reject('your food is not ready');
+    }
+  }, DELAY);
+  })
+  return promise
+};
+
+makeOrder('пиріжок').then(onMakeOrderSuccess).catch(onMakeOrderError) ;
+
+function onMakeOrderSuccess(result) {
+  console.log('onMakeOrderSuccess');
+  console.log(result);
+}
+function onMakeOrderError(error) {
+  console.log('onMakeOrderError');
+  console.log(error);
+}
+console.log(10);
+console.log(20);
+console.log(30);
+console.log(40);
