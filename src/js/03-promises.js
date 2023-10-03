@@ -1,35 +1,33 @@
-const refsForm = document.querySelector(".form")
-  // console.log(refsForm);
+// const refsForm = document.querySelector('.form');
+// // console.log(refsForm);
 
-  refsForm.addEventListener('submit', submitInPromiseGenerator)
+// refsForm.addEventListener('submit', submitInPromiseGenerator);
 
-  function submitInPromiseGenerator(params) {
-    console.log(10);
-  };
+// function submitInPromiseGenerator(params) {
+//   console.log(10);
+// }
 
-function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
-  if (shouldResolve) {
-    // Fulfill
-  } else {
-    // Reject
-  }
-}
+// function createPromise(position, delay) {
+//   const shouldResolve = Math.random() > 0.3;
+//   if (shouldResolve) {
+//     // Fulfill
+//   } else {
+//     // Reject
+//   }
+// }
 
-createPromise(2, 1500)
-  .then(({ position, delay }) => {
-    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
-  })
-  .catch(({ position, delay }) => {
-    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
-  });
-console.log(10);
+// createPromise(2, 1500)
+//   .then(({ position, delay }) => {
+//     console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+//   })
+//   .catch(({ position, delay }) => {
+//     console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+//   });
+// console.log(10);
 
 // !---------------------------------------
 
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
-
 
 // const formField = document.querySelector('.form');
 // let timerId = null;
