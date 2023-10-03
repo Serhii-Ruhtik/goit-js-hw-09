@@ -1,2 +1,0 @@
-document.querySelector(".form").addEventListener("submit",(function(o){console.log(10)})),(void Math.random()).then((function(o){var n=o.position,c=o.delay;console.log("✅ Fulfilled promise ".concat(n," in ").concat(c,"ms"))})).catch((function(o){var n=o.position,c=o.delay;console.log("❌ Rejected promise ".concat(n," in ").concat(c,"ms"))})),console.log(10);
-//# sourceMappingURL=03-promises.c136831d.js.map
