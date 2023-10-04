@@ -8,9 +8,10 @@ const refsForm = document.querySelector('.form');
 refsForm.addEventListener('submit', submitInPromiseGenerator);
 
 function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
+ 
 return new Promise((resolve, reject) => {
-  timerId = setTimeout((shouldResolve) => {
+  const shouldResolve = Math.random() > 0.3;
+  timerId = setTimeout(() => {
     if (shouldResolve) {
       resolve({ position, delay });
     } else {
