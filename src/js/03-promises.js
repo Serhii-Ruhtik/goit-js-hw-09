@@ -32,9 +32,11 @@ function submitInPromiseGenerator(params) {
 createPromise(i, del)
   .then(({ position, delay }) => {
     Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
   .catch(({ position, delay }) => {
     Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
   });
   del += Number(step.value);
   }
