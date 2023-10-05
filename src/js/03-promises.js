@@ -1,4 +1,4 @@
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Notify } from 'notiflix';
 
 
 
@@ -25,7 +25,7 @@ return new Promise((resolve, reject) => {
 function submitInPromiseGenerator(params) {
   params.preventDefault();
 
-  const { delay, step, amount } = params.currentTarget;
+  const { delay, step, amount } = params.currentTarget.elements;
   let del = Number(delay.value);
 
   for (let i = 0; i <= amount.value; i+= 1) {
