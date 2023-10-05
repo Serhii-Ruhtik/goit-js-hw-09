@@ -5,6 +5,8 @@ import { Notify } from 'notiflix';
 const refsForm = document.querySelector('.form');
 // console.log(refsForm);
 
+let timerId = null; 
+
 refsForm.addEventListener('submit', submitInPromiseGenerator);
 
 function createPromise(position, delay) {
