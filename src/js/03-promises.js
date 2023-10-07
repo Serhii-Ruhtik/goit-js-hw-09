@@ -30,7 +30,7 @@ function submitInPromiseGenerator(params) {
   const { delay, step, amount } = params.currentTarget.elements;
   let del = Number(delay.value);
 
-  for (let i = 0; i < amount.value; i+= 1) {
+  for (let i = 1; i <= amount.value; i+= 1) {
     
 createPromise(i, del)
   .then(({ position, delay }) => {
@@ -43,7 +43,9 @@ createPromise(i, del)
   });
   del += Number(step.value);
   }
+  refsForm.reset();
 }
-
+console.log(10);
+console.log(10);
 
 
